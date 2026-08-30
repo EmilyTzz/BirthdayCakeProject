@@ -24,7 +24,7 @@ public class MainController {
     private StackPane flamesStackedPane;
 
     @FXML
-    private ImageView happyBdayText;
+    private HBox happyBdayText;
 
     @FXML
     private VBox windBlowBar;
@@ -34,8 +34,10 @@ public class MainController {
     private int numberOfProgressBlocks = 0;
 
     @FXML
-    private AnchorPane windblowerProgressBar;
+    private AnchorPane windBlowerDisplay;
 
+    @FXML
+    private ImageView instructionsText;
 
     public void initialize(){
         happyBdayText.setVisible(false); // let the hpbd text be invisible first
@@ -61,18 +63,50 @@ public class MainController {
         distortAnimation.setAutoReverse(true);
         distortAnimation.play();
 
+        ScaleTransition instructionsAnimations = new ScaleTransition();
+        instructionsAnimations.setNode(instructionsText);
+        instructionsAnimations.setDuration(Duration.millis(1000));
+        instructionsAnimations.setCycleCount(Animation.INDEFINITE);
+        instructionsAnimations.setInterpolator(Interpolator.LINEAR);
+        instructionsAnimations.setByX(0.3);
+        instructionsAnimations.setByY(0.3);
+        instructionsAnimations.setAutoReverse(true);
+        instructionsAnimations.play();
+
+        ScaleTransition happyBdayAnimation = new ScaleTransition();
+        happyBdayAnimation.setNode(happyBdayText);
+        happyBdayAnimation.setDuration(Duration.millis(1000));
+        happyBdayAnimation.setCycleCount(Animation.INDEFINITE);
+        happyBdayAnimation.setInterpolator(Interpolator.LINEAR);
+        happyBdayAnimation.setByX(0.3);
+        happyBdayAnimation.setByY(0.3);
+        happyBdayAnimation.setAutoReverse(true);
+        happyBdayAnimation.play();
+
         flamesStackedPane.hoverProperty().addListener((observable, notHovering, isHovering) -> {
             if (isHovering){
                 flame.setVisible(false);
                 flameWhenHovered.setVisible(true);
                 addToBlowProcessBar();
-
+                if (numberOfProgressBlocks >= 20){
+                    instructionsText.setVisible(false);
+                    happyBdayText.setVisible(true);
+                    windBlowerDisplay.setVisible(false);
+                    flame.setVisible(false);
+                    flameWhenHovered.setVisible(false);
+                }
             }
             else {
-                flame.setVisible(true);
-                flameWhenHovered.setVisible(false);
+                if (numberOfProgressBlocks >= 20){
+                    flame.setVisible(false);
+                }
+                else {
+                    flame.setVisible(true);
+                    flameWhenHovered.setVisible(false);
+                }
             }
         });
+
     }
 
     private void addToBlowProcessBar(){
