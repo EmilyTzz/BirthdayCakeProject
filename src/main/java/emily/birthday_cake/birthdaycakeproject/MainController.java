@@ -6,7 +6,10 @@ import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
 public class MainController {
@@ -20,8 +23,22 @@ public class MainController {
     @FXML
     private StackPane flamesStackedPane;
 
+    @FXML
+    private ImageView happyBdayText;
+
+    @FXML
+    private VBox windBlowBar;
+
+    private int hoverCount = 0;
+
+    private int numberOfProgressBlocks = 0;
+
+    @FXML
+    private AnchorPane windblowerProgressBar;
+
 
     public void initialize(){
+        happyBdayText.setVisible(false); // let the hpbd text be invisible first
         flame.setVisible(true);
         flameWhenHovered.setVisible(false);
         ScaleTransition scaleTransition = new ScaleTransition();
@@ -40,7 +57,7 @@ public class MainController {
         distortAnimation.setCycleCount(Animation.INDEFINITE);
         distortAnimation.setInterpolator(Interpolator.LINEAR);
         distortAnimation.setByX(-1);
-        distortAnimation.setByY(-0.5);
+        distortAnimation.setByY(0.4);
         distortAnimation.setAutoReverse(true);
         distortAnimation.play();
 
@@ -48,6 +65,7 @@ public class MainController {
             if (isHovering){
                 flame.setVisible(false);
                 flameWhenHovered.setVisible(true);
+                addToBlowProcessBar();
 
             }
             else {
@@ -56,6 +74,19 @@ public class MainController {
             }
         });
     }
+
+    private void addToBlowProcessBar(){
+        if (numberOfProgressBlocks == 20){
+            return;
+        }
+        hoverCount += 1;
+        HBox progressBlock = new HBox();
+        progressBlock.setPrefHeight(7.48);
+        windBlowBar.getChildren().add(progressBlock);
+        progressBlock.setStyle("-fx-background-color: #79ecc3;");
+        numberOfProgressBlocks += 1;
+    }
+
 
 
 
