@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="354.0" prefWidth="284.0" style="-fx-background-color: #bafbe4;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="emily.birthday_cake.birthdaycakeproject.LetterController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="354.0" prefWidth="284.0" style="-fx-background-color: white; -fx-background-radius: 20;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+         <children>
+            <ImageView fitHeight="54.0" fitWidth="47.0" layoutX="103.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/heartIcon.png" />
+               </image>
+            </ImageView>
+            <TextArea fx:id="letterTextArea" layoutX="27.0" layoutY="48.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="45.0">
+               <font>
+                  <Font name="Leelawadee UI" size="12.0" />
+               </font>
+            </TextArea>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

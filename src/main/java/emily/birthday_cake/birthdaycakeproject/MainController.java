@@ -120,6 +120,10 @@ public class MainController {
         envelopAnimations.setCycleCount(1);
         envelopAnimations.setByY(-200);
         envelopAnimations.play();
+
+        envelopIcon.setOnMouseClicked(event ->{
+
+        });
     }
 
     private void addToBlowProcessBar(){
