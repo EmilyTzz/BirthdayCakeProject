@@ -39,6 +39,9 @@ public class MainController {
     @FXML
     private ImageView instructionsText;
 
+    @FXML
+    private ImageView envelopIcon;
+
     public void initialize(){
         happyBdayText.setVisible(false); // let the hpbd text be invisible first
         flame.setVisible(true);
@@ -94,6 +97,7 @@ public class MainController {
                     windBlowerDisplay.setVisible(false);
                     flame.setVisible(false);
                     flameWhenHovered.setVisible(false);
+                    letterAnimations();
                 }
             }
             else {
@@ -107,6 +111,15 @@ public class MainController {
             }
         });
 
+    }
+
+    private void letterAnimations(){
+        TranslateTransition envelopAnimations = new TranslateTransition();
+        envelopAnimations.setNode(envelopIcon);
+        envelopAnimations.setDuration(Duration.millis(1000));
+        envelopAnimations.setCycleCount(1);
+        envelopAnimations.setByY(-200);
+        envelopAnimations.play();
     }
 
     private void addToBlowProcessBar(){

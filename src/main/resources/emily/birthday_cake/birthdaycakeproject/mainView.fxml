@@ -50,6 +50,11 @@
             </HBox>
          </children>
       </AnchorPane>
+      <ImageView fx:id="envelopIcon" fitHeight="150.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="400.0">
+         <image>
+            <Image url="@images/envelop.png" />
+         </image>
+      </ImageView>
       <HBox prefHeight="31.0" prefWidth="312.0" AnchorPane.leftAnchor="109.0" AnchorPane.topAnchor="42.0">
          <children>
             <ImageView fx:id="instructionsText" fitHeight="30.0" fitWidth="349.0" pickOnBounds="true" preserveRatio="true">
