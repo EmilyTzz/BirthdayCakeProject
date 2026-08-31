@@ -7,16 +7,16 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class MainGUI extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("mainView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainGUI.class.getResource("mainView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 528, 370);
         stage.setTitle("Happy Birthday!");
         stage.setResizable(false); // Don't allow user to resize screen
         MainController mainController = fxmlLoader.getController();
 
-        FXMLLoader letterViewLoader = new FXMLLoader(HelloApplication.class.getResource("letterView.fxml"));
+        FXMLLoader letterViewLoader = new FXMLLoader(MainGUI.class.getResource("letterView.fxml"));
         Scene letterScene = new Scene(letterViewLoader.load(), 284, 354);
         Stage letterStage = new Stage();
         letterStage.setResizable(false);

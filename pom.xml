@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                emily.birthday_cake.birthdaycakeproject/emily.birthday_cake.birthdaycakeproject.HelloApplication
+                                emily.birthday_cake.birthdaycakeproject/emily.birthday_cake.birthdaycakeproject.MainGUI
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
