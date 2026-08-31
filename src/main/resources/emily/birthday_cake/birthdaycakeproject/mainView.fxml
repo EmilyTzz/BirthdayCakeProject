@@ -50,6 +50,16 @@
             </HBox>
          </children>
       </AnchorPane>
+      <ImageView fx:id="baloons1" fitHeight="201.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="90.0">
+         <image>
+            <Image url="@images/baloons.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="baloons2" fitHeight="201.0" fitWidth="120.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="90.0">
+         <image>
+            <Image url="@images/baloons.png" />
+         </image>
+      </ImageView>
       <ImageView fx:id="envelopIcon" fitHeight="150.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="400.0">
          <image>
             <Image url="@images/envelop.png" />

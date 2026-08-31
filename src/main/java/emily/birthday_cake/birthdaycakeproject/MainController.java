@@ -47,6 +47,13 @@ public class MainController {
     @FXML
     private ImageView envelopIcon;
 
+    @FXML
+    private ImageView baloons1;
+
+    @FXML
+    private ImageView baloons2;
+
+
     private Stage letterStage;
 
     private Scene letterScene;
@@ -60,6 +67,9 @@ public class MainController {
         happyBdayText.setVisible(false); // let the hpbd text be invisible first
         flame.setVisible(true);
         flameWhenHovered.setVisible(false);
+        baloons1.setVisible(false);
+        baloons2.setVisible(false);
+
         ScaleTransition scaleTransition = new ScaleTransition();
         scaleTransition.setNode(flame);
         scaleTransition.setDuration(Duration.millis(1000));
@@ -111,6 +121,7 @@ public class MainController {
                     windBlowerDisplay.setVisible(false);
                     flame.setVisible(false);
                     flameWhenHovered.setVisible(false);
+                    baloonAnimations();
                     letterAnimations();
                 }
             }
@@ -125,6 +136,27 @@ public class MainController {
             }
         });
 
+    }
+
+    private void baloonAnimations(){
+        baloons1.setVisible(true);
+        baloons2.setVisible(true);
+
+        TranslateTransition baloon1Animations = new TranslateTransition();
+        baloon1Animations.setNode(baloons1);
+        baloon1Animations.setDuration(Duration.millis(1000));
+        baloon1Animations.setCycleCount(TranslateTransition.INDEFINITE);
+        baloon1Animations.setByY(20);
+        baloon1Animations.setAutoReverse(true);
+        baloon1Animations.play();
+
+        TranslateTransition baloon2Animations = new TranslateTransition();
+        baloon2Animations.setNode(baloons2);
+        baloon2Animations.setDuration(Duration.millis(1000));
+        baloon2Animations.setCycleCount(TranslateTransition.INDEFINITE);
+        baloon2Animations.setByY(20);
+        baloon2Animations.setAutoReverse(true);
+        baloon2Animations.play();
     }
 
     private void letterAnimations(){
