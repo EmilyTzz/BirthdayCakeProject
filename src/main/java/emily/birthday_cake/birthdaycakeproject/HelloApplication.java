@@ -13,8 +13,17 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("mainView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 528, 370);
         stage.setTitle("Happy Birthday!");
-        stage.setScene(scene);
         stage.setResizable(false); // Don't allow user to resize screen
+        MainController mainController = fxmlLoader.getController();
+
+        FXMLLoader letterViewLoader = new FXMLLoader(HelloApplication.class.getResource("letterView.fxml"));
+        Scene letterScene = new Scene(letterViewLoader.load(), 284, 354);
+        Stage letterStage = new Stage();
+        letterStage.setResizable(false);
+
+        mainController.initData(letterStage, letterScene);
+
+        stage.setScene(scene);
         stage.show();
     }
 }

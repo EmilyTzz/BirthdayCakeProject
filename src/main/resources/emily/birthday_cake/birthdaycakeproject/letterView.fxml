@@ -16,7 +16,7 @@
                   <Image url="@images/heartIcon.png" />
                </image>
             </ImageView>
-            <TextArea fx:id="letterTextArea" layoutX="27.0" layoutY="48.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="45.0">
+            <TextArea fx:id="letterTextArea" editable="false" layoutX="27.0" layoutY="48.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="45.0">
                <font>
                   <Font name="Leelawadee UI" size="12.0" />
                </font>

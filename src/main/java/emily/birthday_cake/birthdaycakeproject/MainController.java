@@ -5,12 +5,17 @@ import javafx.animation.Interpolator;
 import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import java.io.IOException;
 
 public class MainController {
 
@@ -41,6 +46,15 @@ public class MainController {
 
     @FXML
     private ImageView envelopIcon;
+
+    private Stage letterStage;
+
+    private Scene letterScene;
+
+    public void initData(Stage letterStage, Scene letterScene){
+        this.letterStage = letterStage;
+        this.letterScene = letterScene;
+    }
 
     public void initialize(){
         happyBdayText.setVisible(false); // let the hpbd text be invisible first
@@ -120,10 +134,16 @@ public class MainController {
         envelopAnimations.setCycleCount(1);
         envelopAnimations.setByY(-200);
         envelopAnimations.play();
-
         envelopIcon.setOnMouseClicked(event ->{
-
+            loadLetter();
         });
+    }
+
+    private void loadLetter(){
+        envelopIcon.setVisible(false);
+        letterStage.setTitle("My Birthday Letter to You");
+        letterStage.setScene(letterScene);
+        letterStage.show();
     }
 
     private void addToBlowProcessBar(){
