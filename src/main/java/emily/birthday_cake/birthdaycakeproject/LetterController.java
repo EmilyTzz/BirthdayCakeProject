@@ -3,11 +3,17 @@ package emily.birthday_cake.birthdaycakeproject;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 
+/**
+ * This class is the controller for the secondary window of the birthday letter
+ */
 public class LetterController {
 
     @FXML
     private TextArea letterTextArea;
 
+    /**
+     * This method helps to add a Happy Birthday message on to the letter
+     */
     public void initialize(){
         letterTextArea.setText("**Happy Birthday!**\n" +
                 "\n" +
